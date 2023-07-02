@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.add.NoteFragment">
+
+    <!-- Close -->
+    <ImageView
+        android:id="@+id/closeImg"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:rotation="45"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- title -->
+    <EditText
+        android:id="@+id/titleEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16mdp"
+        android:background="@drawable/bg_ruonded_yellow_light"
+        android:fontFamily="@font/abel"
+        android:hint="@string/title"
+        android:maxLines="1"
+        android:padding="@dimen/_10mdp"
+        android:textColorHint="@color/yellowDark"
+        android:textSize="@dimen/_20font_mdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeImg" />
+    <!-- Desc -->
+    <EditText
+        android:id="@+id/descEdt"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_120mdp"
+        android:layout_marginTop="@dimen/_16mdp"
+        android:background="@drawable/bg_ruonded_yellow_light"
+        android:fontFamily="@font/abel"
+        android:gravity="top"
+        android:hint="@string/desc"
+        android:padding="@dimen/_10mdp"
+        android:textColorHint="@color/yellowDark"
+        android:textSize="@dimen/_18font_mdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleEdt" />
+    <!-- Contact -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentLay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16mdp"
+        android:padding="@dimen/_16mdp"
+        android:background="@drawable/bg_ruonded_gray_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descEdt">
+        <!-- Cats -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/categoriesLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="21dp">
+            <!-- Title -->
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:text="@string/categories"
+                android:textColor="@color/grayDark"
+                android:textSize="@dimen/_18font_mdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                app:layout_constraintStart_toStartOf="parent" />
+            <!-- Spinner -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="@dimen/_150mdp"
+                android:layout_height="@dimen/_30mdp"
+                android:layout_margin="@dimen/_3mdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5mdp"
+                app:cardElevation="@dimen/_1mdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Spinner
+                    android:id="@+id/categoresSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Priority -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/priorityLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5mdp"
+            app:layout_constraintTop_toBottomOf="@id/categoriesLay"
+            tools:layout_editor_absoluteX="21dp">
+            <!-- Title -->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:text="@string/Priority"
+                android:textColor="@color/grayDark"
+                android:textSize="@dimen/_18font_mdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                app:layout_constraintStart_toStartOf="parent" />
+            <!-- Spinner -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="@dimen/_150mdp"
+                android:layout_height="@dimen/_30mdp"
+                android:layout_margin="@dimen/_3mdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5mdp"
+                app:cardElevation="@dimen/_1mdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Spinner
+                    android:id="@+id/prioritySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Save -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveNote"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_55mdp"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/abel"
+        android:paddingHorizontal="@dimen/_50mdp"
+        android:text="Save"
+        android:textSize="@dimen/_18font_mdp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_10mdp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentLay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
